@@ -1,0 +1,200 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-weight: normal;
+}
+
+body {
+  overflow-x: hidden;
+}
+body nav {
+  background-color: lightblue;
+  position: sticky;
+  top: 0;
+  z-index: 5;
+}
+body nav ul {
+  display: flex;
+}
+body nav ul li {
+  list-style-type: none;
+  margin: 1rem;
+}
+body nav ul li a {
+  font-weight: bold;
+  color: darkolivegreen;
+  text-decoration: none;
+  transition: all 0.2s ease;
+}
+body nav ul li a:hover {
+  color: rgb(177, 78, 72);
+}
+body main section.main-area {
+  min-height: 60vh;
+  background-color: whitesmoke;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+}
+body main section.main-area div.info {
+  flex-basis: 450px;
+  padding: 1rem;
+}
+body main section.main-area div.info h1 {
+  font-size: 2.5rem;
+}
+body main section.main-area div.info h2 {
+  font-size: 1.25rem;
+}
+body main section.main-area div.info a {
+  color: whitesmoke;
+  background-color: rgb(177, 78, 72);
+  padding: 0.25rem 0.5rem;
+  font-size: 1.5rem;
+  border-radius: 10px;
+  display: inline-block;
+  margin: 0.5rem 0;
+  text-decoration: none;
+  transition: all 0.2s ease;
+}
+body main section.main-area div.info a:hover {
+  transition: all 1s ease-in;
+  transform: scale(1.3);
+}
+body main section.main-area div.profile-img {
+  flex-basis: 450px;
+}
+body main section.main-area div.profile-img img {
+  width: 100%;
+}
+body main section.about-me {
+  background-color: rgba(117, 146, 202, 0.5);
+  padding: 5rem 2rem;
+  display: flex;
+}
+body main section.about-me section.description {
+  width: 50%;
+}
+body main section.about-me section.description h2 {
+  font-size: 2rem;
+}
+body main section.about-me section.description div.progress-bar-area div.each-progress {
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+  margin: 1rem 0rem;
+}
+body main section.about-me section.description div.progress-bar-area div.each-progress p {
+  margin: 0;
+  font-weight: bold;
+  flex-shrink: 0;
+  width: 150px;
+}
+body main section.about-me section.description div.progress-bar-area div.each-progress div.progress {
+  flex: 1;
+}
+body main section.resume {
+  display: flex;
+  flex-wrap: wrap;
+  padding: 2rem;
+}
+body main section.resume section.table {
+  flex: 5 0 500px;
+  padding: 2rem 1rem;
+}
+body main section.resume section.table table {
+  --bs-table-bg: none;
+  border-collapse: collapse;
+  table-layout: fixed;
+  width: 100%;
+}
+body main section.resume section.table table tr {
+  border-bottom: 2px solid darkgray;
+  transition: all 0.2s ease;
+}
+body main section.resume section.table table tr:hover {
+  background-color: rgba(117, 146, 202, 0.5);
+  color: saddlebrown;
+  font-weight: bold;
+}
+body main section.resume section.table table tr td {
+  padding: 1rem;
+}
+body main section.resume section.pic {
+  flex: 1 1 500px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  isolation: isolate;
+}
+body main section.resume section.pic img {
+  width: 80%;
+}
+body main section.resume section.pic div.greenRect,
+body main section.resume section.pic div.greenRect2,
+body main section.resume section.pic div.greenRect3 {
+  border-radius: 20%;
+  border: 20px solid rgba(177, 78, 72, 0.3);
+  position: absolute;
+  z-index: -1;
+  mix-blend-mode: lighten;
+}
+body main section.resume section.pic div.greenRect {
+  width: 35vw;
+  height: 90vh;
+  top: 30px;
+  left: 80px;
+}
+body main section.resume section.pic div.greenRect2 {
+  width: 30vw;
+  height: 40vh;
+  top: 300px;
+  left: -300px;
+}
+body main section.resume section.pic div.greenRect3 {
+  width: 30vw;
+  height: 40vh;
+  top: 0px;
+  left: -100px;
+}
+
+@media screen and (max-width: 488px) {
+  body nav {
+    position: static;
+  }
+  body nav ul {
+    flex-direction: column;
+  }
+}
+@media screen and (max-width: 800px) {
+  body main section.about-me section.description {
+    width: 90%;
+  }
+  body main section.resume {
+    overflow-x: auto;
+  }
+  body main section.resume section.pic div {
+    display: none;
+  }
+}
+body nav.scrolled {
+  box-shadow: 0 10px 6px -6px #777;
+  background-color: red !important;
+}
+
+.getting-bigger {
+  background-color: goldenrod;
+  transform: scale(1.2);
+  transform: all 0.2s ease;
+}/*# sourceMappingURL=style.css.map */

@@ -1,0 +1,239 @@
+$themeColor: rgba(177, 78, 72, 1);
+$secondColor: rgba(117, 146, 202, 0.5);
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-weight: normal;
+}
+
+body {
+  overflow-x: hidden;
+  nav {
+    background-color: lightblue;
+    position: sticky;
+    top: 0;
+    z-index: 5;
+    ul {
+      display: flex;
+      li {
+        list-style-type: none;
+        margin: 1rem;
+        a {
+          font-weight: bold;
+          color: darkolivegreen;
+          text-decoration: none;
+          transition: all 0.2s ease;
+          &:hover {
+            color: $themeColor;
+          }
+        }
+      }
+    }
+  }
+  main {
+    section.main-area {
+      //border: 2px solid red;
+      min-height: 60vh;
+      background-color: whitesmoke;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      align-items: center;
+
+      div.info {
+        flex-basis: 450px;
+        padding: 1rem;
+        h1 {
+          font-size: 2.5rem;
+        }
+        h2 {
+          font-size: 1.25rem;
+        }
+        a {
+          color: whitesmoke;
+          background-color: $themeColor;
+          padding: 0.25rem 0.5rem;
+          font-size: 1.5rem;
+          border-radius: 10px;
+          display: inline-block;
+          margin: 0.5rem 0;
+          text-decoration: none;
+          transition: all 0.2s ease;
+          &:hover {
+            transition: all 1s ease-in;
+            transform: scale(1.3);
+          }
+        }
+      }
+
+      div.profile-img {
+        flex-basis: 450px;
+        img {
+          width: 100%;
+        }
+      }
+    }
+    section.about-me {
+      background-color: $secondColor;
+      padding: 5rem 2rem;
+      display: flex;
+      //justify-content: center;
+
+      section.description {
+        width: 50%;
+        h2 {
+          font-size: 2rem;
+          p {
+          }
+        }
+
+        div.progress-bar-area {
+          div.each-progress {
+            display: flex;
+            align-items: center;
+            gap: 2rem;
+            margin: 1rem 0rem;
+
+            p {
+              margin: 0;
+              font-weight: bold;
+              flex-shrink: 0; // Prevent the skill name from shrinking
+              width: 150px;
+            }
+
+            div.progress {
+              flex: 1;
+            }
+          }
+        }
+      }
+    }
+
+    section.resume {
+      display: flex;
+      flex-wrap: wrap;
+      padding: 2rem;
+
+      section.table {
+        flex: 5 0 500px;
+        //border: 2px solid black;
+        padding: 2rem 1rem;
+        table {
+          --bs-table-bg: none;
+          border-collapse: collapse;
+          table-layout: fixed;
+          width: 100%;
+          tr {
+            border-bottom: 2px solid darkgray;
+            transition: all 0.2s ease;
+            &:hover {
+              background-color: $secondColor;
+              color: saddlebrown;
+              font-weight: bold;
+            }
+            td {
+              padding: 1rem;
+            }
+          }
+        }
+      }
+
+      section.pic {
+        flex: 1 1 500px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        position: relative;
+        isolation: isolate;
+
+        img {
+          width: 80%;
+        }
+
+        div.greenRect,
+        div.greenRect2,
+        div.greenRect3 {
+          border-radius: 20%;
+          border: 20px solid rgba(177, 78, 72, 0.3);
+          position: absolute;
+          z-index: -1;
+          mix-blend-mode: lighten; // 或者使用 lighten
+        }
+
+        div.greenRect {
+          width: 35vw;
+          height: 90vh;
+          top: 30px;
+          left: 80px;
+        }
+
+        div.greenRect2 {
+          width: 30vw;
+          height: 40vh;
+          top: 300px;
+          left: -300px;
+        }
+
+        div.greenRect3 {
+          width: 30vw;
+          height: 40vh;
+          top: 0px;
+          left: -100px;
+        }
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 488px) {
+  body {
+    nav {
+      position: static;
+      ul {
+        flex-direction: column;
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 800px) {
+  body {
+    main {
+      section.about-me {
+        section.description {
+          width: 90%;
+        }
+      }
+
+      section.resume {
+        overflow-x: auto;
+        section.pic {
+          div {
+            display: none;
+          }
+        }
+      }
+    }
+  }
+}
+
+body nav.scrolled {
+  box-shadow: 0 10px 6px -6px #777;
+  background-color: red !important;
+}
+
+.getting-bigger {
+  background-color: goldenrod;
+  transform: scale(1.2);
+  transform: all 0.2s ease;
+}
